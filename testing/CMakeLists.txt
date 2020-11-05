@@ -54,6 +54,12 @@ if(LSL_BENCHMARKS)
 	)
 	target_link_libraries(lsl_bench_internal PRIVATE lslobj lslboost catch_main)
 	installLSLApp(lsl_bench_internal)
+
+	add_executable(bench_2thread
+            SpeedTest/bench_2thread.cpp
+			)
+	target_link_libraries(bench_2thread PRIVATE lslobj lslboost)
+	installLSLApp(bench_2thread)
 endif()
 
 set(LSL_TESTS lsl_test_exported lsl_test_internal)
